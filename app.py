@@ -14,6 +14,7 @@ st.subheader("Por favor escribe en el campo de texto la frase que deseas analiza
 
 translator = Translator()
 
+
 def create_image_from_sentiment(text):
   """
   Creates an image based on the sentiment of the given text.
@@ -45,8 +46,6 @@ def create_image_from_sentiment(text):
   return image
 
 # Get the user's text.
-text = input("Enter some text: ")
-
 # Create an image based on the sentiment of the text.
 image = create_image_from_sentiment(text)
 
