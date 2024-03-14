@@ -42,10 +42,10 @@ else:
     recommendations.append("Try to find something to do that you enjoy.")
 
   # Return the results.
-return {
-    "sentiment": sentiment,
-    "recommendations": recommendations
-  }
+
+"sentiment": sentiment,
+"recommendations": recommendations
+
 
 # Example usage:
 text = "I'm feeling really down today."
