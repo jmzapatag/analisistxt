@@ -27,11 +27,13 @@ with st.expander('Analizar texto'):
             st.write( 'Es un sentimiento Negativo 😔')
         else:
             st.write( 'Es un sentimiento Neutral 😐')
+
+sentiment = blob.sentiment.polarity
 recommendations = []
-  if blob.sentiment.polarity > 0:
+  if sentiment > 0:
     recommendations.append("It seems like you're feeling positive. Keep up the good work!")
     recommendations.append("Try to focus on the things that make you happy.")
-  elif blob.sentiment.polarity < 0:
+  elif sentiment < 0:
     recommendations.append("It sounds like you're feeling down. That's okay. Everyone feels down sometimes.")
     recommendations.append("Try to talk to someone you trust about how you're feeling.")
     recommendations.append("There are also many resources available to help you cope with difficult emotions.")
@@ -41,9 +43,11 @@ recommendations = []
 
   # Return the results.
   return {
-    "sentiment": blob.sentiment.polarity,
+    "sentiment": sentiment,
     "recommendations": recommendations
   }
+
+# Example usage:
 text = "I'm feeling really down today."
 results = analyze_text(text)
 
@@ -51,5 +55,3 @@ print(f"Sentiment: {results['sentiment']}")
 print("Recommendations:")
 for recommendation in results["recommendations"]:
   print(f"- {recommendation}")
-
-
