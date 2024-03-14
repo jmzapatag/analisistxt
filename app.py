@@ -40,13 +40,6 @@ elif sentiment < 0:
 else:
     recommendations.append("It seems like you're feeling neutral. That's okay too.")
     recommendations.append("Try to find something to do that you enjoy.")
-
-  # Return the results.
-
-"sentiment": sentiment,
-"recommendations": recommendations
-
-
 # Example usage:
 text = "I'm feeling really down today."
 results = analyze_text(text)
