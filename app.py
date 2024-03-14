@@ -45,14 +45,6 @@ def create_image_from_sentiment(text):
 
   return image
 
-# Get the user's text.
-# Create an image based on the sentiment of the text.
-image = create_image_from_sentiment(text)
-
-# Display the image.
-image.show()
-
-
 with st.expander('Analizar texto'):
     text = st.text_input('Escribe por favor: ')
     if text:
@@ -63,6 +55,7 @@ with st.expander('Analizar texto'):
         st.write('Polarity: ', round(blob.sentiment.polarity,2))
         st.write('Subjectivity: ', round(blob.sentiment.subjectivity,2))
         x=round(blob.sentiment.polarity,2)
+      image = create_image_from_sentiment(text)
         if x >= 0.5:
             st.write( 'Es un sentimiento Positivo 😊')
             image.show()
