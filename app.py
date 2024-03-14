@@ -55,7 +55,7 @@ with st.expander('Analizar texto'):
         st.write('Polarity: ', round(blob.sentiment.polarity,2))
         st.write('Subjectivity: ', round(blob.sentiment.subjectivity,2))
         x=round(blob.sentiment.polarity,2)
-      image = create_image_from_sentiment(text)
+        image = create_image_from_sentiment(text)
         if x >= 0.5:
             st.write( 'Es un sentimiento Positivo 😊')
             image.show()
