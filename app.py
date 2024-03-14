@@ -26,13 +26,13 @@ with st.expander('Analizar texto'):
         x=round(blob.sentiment.polarity,2)
         if x >= 0.5:
             st.write( 'Es un sentimiento Positivo 😊')
-            create_image_from_sentiment
+            image.show()
         elif x <= -0.5:
             st.write( 'Es un sentimiento Negativo 😔')
-            create_image_from_sentiment
+            image.show()
         else:
             st.write( 'Es un sentimiento Neutral 😐')
-            create_image_from_sentiment
+            image.show()
 def create_image_from_sentiment(text):
   """
   Creates an image based on the sentiment of the given text.
