@@ -47,6 +47,7 @@ def create_image_from_sentiment(text):
 
 with st.expander('Analizar texto'):
     text = st.text_input('Escribe por favor: ')
+    create_image_from_sentiment(text)
     if text:
 
         translation = translator.translate(text, src="es", dest="en")
