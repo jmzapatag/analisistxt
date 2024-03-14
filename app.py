@@ -44,4 +44,12 @@ recommendations = []
     "sentiment": blob.sentiment.polarity,
     "recommendations": recommendations
   }
+text = "I'm feeling really down today."
+results = analyze_text(text)
+
+print(f"Sentiment: {results['sentiment']}")
+print("Recommendations:")
+for recommendation in results["recommendations"]:
+  print(f"- {recommendation}")
+
 
