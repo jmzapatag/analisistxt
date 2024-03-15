@@ -1,10 +1,8 @@
 from textblob import TextBlob
 import pandas as pd
 import streamlit as st
-from googletrans import Translator
 from PIL import Image
-from io import BytesIO
-import requests
+from googletrans import Translator
 
 st.title('Análisis de Sentimiento')
 image = Image.open('emoticones.jpg')
@@ -12,8 +10,6 @@ st.image(image)
 st.subheader("Por favor escribe en el campo de texto la frase que deseas analizar")
 
 translator = Translator()
-
-  return image
 
 with st.expander('Analizar texto'):
     text = st.text_input('Escribe por favor: ')
@@ -25,11 +21,9 @@ with st.expander('Analizar texto'):
         st.write('Polarity: ', round(blob.sentiment.polarity,2))
         st.write('Subjectivity: ', round(blob.sentiment.subjectivity,2))
         x=round(blob.sentiment.polarity,2)
-        image = create_image_from_sentiment(text)
         if x >= 0.5:
             st.write( 'Es un sentimiento Positivo 😊')
         elif x <= -0.5:
             st.write( 'Es un sentimiento Negativo 😔')
         else:
             st.write( 'Es un sentimiento Neutral 😐')
-
